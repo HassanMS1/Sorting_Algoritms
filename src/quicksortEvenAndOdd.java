@@ -1,6 +1,9 @@
 import java.util.Arrays;
 
 public class quicksortEvenAndOdd {
+
+
+
     public static void partialSorting(int[]a){
         int venstre=0;
         int høyre=a.length-1;

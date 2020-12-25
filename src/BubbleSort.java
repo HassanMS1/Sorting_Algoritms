@@ -4,6 +4,7 @@ public class BubbleSort {
 
     public static void bubblesort(int [] arr){
 
+        //outer-loop does not access array, it only makes innerloop run enough times
         for (int i=0; i<arr.length-1;i++)
         {
             // i will make j run again until all numbers are sorted
@@ -33,10 +34,17 @@ public class BubbleSort {
 
 
 
+
+
+
+
     public static void main(String[] args) {
         int [] arr = {5,8,3,2,9};
-        bubblesort(arr);
-        System.out.println(Arrays.toString(arr));
+        //bubblesort(arr);
+        //System.out.println(Arrays.toString(arr));
+       String name = "HASSAN";
+
+
     }
 
 
