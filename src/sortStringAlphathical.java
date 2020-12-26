@@ -8,7 +8,7 @@ public class sortStringAlphathical {
           if(s.charAt(j)>s.charAt(j+1))
           {
               Character temp = s.charAt(j);
-                s.charAt(j);
+
 
 
           }
