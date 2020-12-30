@@ -3,12 +3,14 @@ import java.util.Arrays;
 public class GenericsTest {
 
 // vi lover at T [] listen som kommer inn implenterer comparerable
+    // returnerer maks vakdri
     public static <T extends Comparable<? super T>> int maks(T[] a, int begin, int end) {
         int m = begin;                     // indeks til største verdi
         T maksverdi = a[begin];            // største verdi
 
         for (int i = begin+ 1; i < end; i++) {
-            if (a[i].compareTo(maksverdi) > 0)
+            // the objects are getting compared via the compareTo method
+            if (a[i].compareTo(maksverdi) < 0)
             {
                 maksverdi = a[i];  // største verdi oppdateres
                 m = i;             // indeks til største verdi oppdaters
@@ -77,7 +79,8 @@ public class GenericsTest {
             T verdi = a[i];        // verdi er et tabellelemnet
             int  j = i - 1;        // j er en indeks
             // sammenligner og forskyver:
-            for (; j >= 0 && verdi.compareTo(a[j]) < 0 ; j--) a[j+1] = a[j];
+            for (; j >= 0 && verdi.compareTo(a[j]) < 0 ; j--)
+                a[j+1] = a[j];
 
             a[j + 1] = verdi;      // j + 1 er rett sortert plass
         }
@@ -105,6 +108,7 @@ public class GenericsTest {
             // if this.last == other.last  0
             // if this.last> other.last 1
 
+            // for age you can return (this .age - other.age)
             int last_compare = this.lName.compareTo(other.lName);
 
             if (last_compare==0){
@@ -126,18 +130,21 @@ public class GenericsTest {
 
     public static void main(String[] args) {
 
-        Person [] d= {new Person("Hassan", "Boonsla", 35), new Person("Furqan", "Boons", 34),
-                      new Person("Ahmed", "Boonsla", 39)  };
+        Person [] d= {new Person("Hassan", "Ma", 35), new Person("Furqan", "Aa", 34),
+                      new Person("Ahmed", "Z", 39)  };
 
         int siste= d.length;
 
 
 
-        System.out.println(maks(d,0,siste));
+        //System.out.println(maks(d,0,siste));
         System.out.println(Arrays.toString(d));
         sort(d);
-        int personMax;
         System.out.println(Arrays.toString(d));
+
+        Integer[] a = {23,423,1,3,43,1};
+        innsettingssortering(a);
+        System.out.println(Arrays.toString(a));
 
 
 

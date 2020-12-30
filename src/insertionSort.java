@@ -50,7 +50,7 @@ public class insertionSort {
           greater than key, to one position ahead
           of their current position */
             while (j >=0 && arr[j] > key) {
-
+                // moving the bigger value which was behind to next position
                 arr[j+1] = arr[j];
                 j--;
 
@@ -64,7 +64,7 @@ public class insertionSort {
 
 
     public static void main(String[] args) {
-        int k[] = {1,3,8,7,4};
+        int[] k = {1,8,1,3,0,4};
        // insertSort(k);
       insertionSortGeeks(k);
 

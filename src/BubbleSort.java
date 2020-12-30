@@ -40,8 +40,8 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int [] arr = {5,8,3,2,9};
-        //bubblesort(arr);
-        //System.out.println(Arrays.toString(arr));
+        bubblesort(arr);
+        System.out.println(Arrays.toString(arr));
        String name = "HASSAN";
 
 
